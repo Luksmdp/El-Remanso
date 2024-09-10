@@ -1,0 +1,7 @@
+1. CRUD Productos
+2. CRUD Categorías
+3. CRUD Promociones
+4. Carrito de compra
+5. Enviar WhatsApp con la compra del carrito a la Mueblería
+6. Las promociones deben tener una nivel de prioridad para ser mostradas en un orden especifico en la pagina principal
+
