@@ -1,18 +1,6 @@
 
 A
 elremanso/pom.xml,3\8\3848bda8fcf8eb3aa63faf7b6236b78f73759e3a
-z
-Jelremanso/src/main/java/com/muebleselremanso/elremanso/model/Category.java,c\a\ca77f019c04af19fca33c5cabd518997dabb1699
-y
-Ielremanso/src/main/java/com/muebleselremanso/elremanso/model/Product.java,4\d\4d6043a2cd08a6031a9ea7f1601a1cdc85a9dcee
-{
-Kelremanso/src/main/java/com/muebleselremanso/elremanso/model/Promotion.java,8\e\8e918903ffe949573c82cee2da4bb80eb5ec3842
-Å
-Qelremanso/src/main/java/com/muebleselremanso/elremanso/model/PromotedProduct.java,5\2\520327f29a6926889562519e359cdca96e1104f4
-~
-Nelremanso/src/main/java/com/muebleselremanso/elremanso/model/ShoppingCart.java,2\a\2a3f340dd81c58f438cac1a11e712c49fb7ec10c
-z
-Jelremanso/src/main/java/com/muebleselremanso/elremanso/model/CartItem.java,9\4\9423907386b7512f30082e784c3d6003ba8d420b
 Ä
 Pelremanso/src/main/java/com/muebleselremanso/elremanso/ElremansoApplication.java,2\7\277572efd87ec6642277fd5e53946a1f63e11b20
 â
@@ -25,8 +13,6 @@ Xelremanso/src/main/java/com/muebleselremanso/elremanso/repository/ProductReposi
 ]elremanso/src/main/java/com/muebleselremanso/elremanso/repository/ShoppingCartRepository.java,a\0\a0463fa2059e0a251fa9536224688025d088c9b5
 Ç
 Relremanso/src/main/java/com/muebleselremanso/elremanso/service/ProductService.java,e\8\e868c1838fb52fc56f2f0accaa5df3bfaffbbcc3
-á
-Welremanso/src/main/java/com/muebleselremanso/elremanso/model/entity/dto/ProductDto.java,9\d\9d6ba7d2ff489e189c717ec8f2bf00d4c3bc5401
 Ä
 Pelremanso/src/main/java/com/muebleselremanso/elremanso/model/dto/ProductDto.java,f\8\f8db52c0c59944dc04beb0128a6f547e8c54e2d8
 Ä
@@ -65,3 +51,5 @@ Yelremanso/src/main/java/com/muebleselremanso/elremanso/controller/CategoryContr
 Xelremanso/src/main/java/com/muebleselremanso/elremanso/controller/ProductController.java,9\d\9df39ca04105988a11e03fff757d7843e5e13f8f
 ç
 ]elremanso/src/main/java/com/muebleselremanso/elremanso/controller/ShoppingCartController.java,1\6\16b5a2f541b553b492e8d312e4025b3c1aed4dfc
+D
+elremanso/.gitignore,6\a\6aed1ca1315506e893da59ce4b18394d3ac86c99
