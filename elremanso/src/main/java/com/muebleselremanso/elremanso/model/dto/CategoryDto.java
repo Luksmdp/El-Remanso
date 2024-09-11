@@ -2,7 +2,9 @@ package com.muebleselremanso.elremanso.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 public class CategoryDto {
 
     @NotBlank(message = "El nombre es obligatorio")

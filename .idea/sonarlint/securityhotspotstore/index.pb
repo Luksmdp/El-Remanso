@@ -57,3 +57,5 @@ D
 Proximo.txt,b\5\b501188657ef412dcb2fe50def1a93e27d4ea539
 >
 Requisitos.txt,5\f\5f8fc6c6db6b823fbfedfd7ff567dae9e1bb48fd
+Å
+Qelremanso/src/main/java/com/muebleselremanso/elremanso/model/dto/ApiResponse.java,3\a\3a8c1cdf585bede231b643d976c8e73045c08717

@@ -1,5 +1,6 @@
 package com.muebleselremanso.elremanso.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,7 @@ public class Product {
     private Double price;
     private Double promotionalPrice;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;

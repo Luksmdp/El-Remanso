@@ -20,19 +20,18 @@ public class CategoryController {
 
     @GetMapping("categories")
     public ResponseEntity<List<Category>> findAll(){
-        List<Category> categoryList = categoryService.findAll();
+        return categoryService.findAll();
 
-        return new ResponseEntity<>(categoryList,HttpStatus.OK);
     }
 
     @GetMapping("categories{id}")
     public ResponseEntity<Category> findById(@PathVariable Long id){
-        return new ResponseEntity<>(categoryService.findById(id),HttpStatus.OK);
+        return categoryService.findById(id);
     }
 
     @PostMapping("categories")
     public ResponseEntity<Category> save(@RequestBody @Valid CategoryDto categoryDto){
-        return new ResponseEntity<>(categoryService.save(categoryDto),HttpStatus.OK);
+        return categoryService.save(categoryDto);
     }
 
 

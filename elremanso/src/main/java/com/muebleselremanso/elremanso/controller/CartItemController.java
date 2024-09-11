@@ -25,18 +25,17 @@ public class CartItemController {
 
     @GetMapping("cartItems")
     public ResponseEntity<List<CartItem>> findAll(){
-        List<CartItem> cartItemList = cartItemService.findAll();
 
-        return new ResponseEntity<>(cartItemList, HttpStatus.OK);
+        return cartItemService.findAll();
     }
 
     @GetMapping("cartItems{id}")
     public ResponseEntity<CartItem> findById(@PathVariable Long id){
-        return new ResponseEntity<>(cartItemService.findById(id),HttpStatus.OK);
+        return cartItemService.findById(id);
     }
 
     @PostMapping("cartItems")
     public ResponseEntity<CartItem> save(@RequestBody @Valid CartItemDto cartItemDto){
-        return new ResponseEntity<>(cartItemService.save(cartItemDto),HttpStatus.OK);
+        return cartItemService.save(cartItemDto);
     }
 }

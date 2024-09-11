@@ -1,5 +1,6 @@
 package com.muebleselremanso.elremanso.controller;
 
+import com.muebleselremanso.elremanso.model.dto.ApiResponse;
 import com.muebleselremanso.elremanso.model.dto.CategoryDto;
 import com.muebleselremanso.elremanso.model.dto.ProductDto;
 import com.muebleselremanso.elremanso.model.entity.Product;
@@ -28,7 +29,7 @@ public class ProductController {
     }
 
     @GetMapping("products{id}")
-    public ResponseEntity<Product> findProductById(@PathVariable Long id){
+    public ResponseEntity<ApiResponse<Product>> findProductById(@PathVariable Long id){
         return productService.findById(id);
     }
 

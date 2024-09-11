@@ -24,18 +24,17 @@ public class ShoppingCartController {
 
     @GetMapping("shoppingCarts")
     public ResponseEntity<List<ShoppingCart>> findAll(){
-        List<ShoppingCart> shoppingCartList = shoppingCartService.findAll();
 
-        return new ResponseEntity<>(shoppingCartList, HttpStatus.OK);
+        return shoppingCartService.findAll();
     }
 
     @GetMapping("shoppingCarts{id}")
     public ResponseEntity<ShoppingCart> findById(@PathVariable Long id){
-        return new ResponseEntity<>(shoppingCartService.findById(id),HttpStatus.OK);
+        return shoppingCartService.findById(id);
     }
 
     @PostMapping("shoppingCarts")
     public ResponseEntity<ShoppingCart> save(@RequestBody @Valid ShoppingCartDto shoppingCartDto){
-        return new ResponseEntity<>(shoppingCartService.save(shoppingCartDto),HttpStatus.OK);
+        return shoppingCartService.save(shoppingCartDto);
     }
 }

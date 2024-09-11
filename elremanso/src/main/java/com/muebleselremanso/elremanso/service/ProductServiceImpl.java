@@ -1,5 +1,6 @@
 package com.muebleselremanso.elremanso.service;
 
+import com.muebleselremanso.elremanso.model.dto.ApiResponse;
 import com.muebleselremanso.elremanso.model.dto.ProductDto;
 import com.muebleselremanso.elremanso.model.entity.Category;
 import com.muebleselremanso.elremanso.model.entity.Product;
@@ -62,12 +63,16 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public ResponseEntity<List<Product>> findAll() {
-        return null;
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(productRepository.findAll());
     }
 
     @Override
-    public ResponseEntity<Product> findById(Long id) {
-        return null;
+    public ResponseEntity<ApiResponse<Product>> findById(Long id) {
+        return productRepository.findById(id)
+                .map(product -> ResponseEntity.ok().body(new  ApiResponse<>("Producto encontrado",product)))
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(new ApiResponse<>("El producto con id " + id + " no fue encontrado", null)));
     }
 
     @Override

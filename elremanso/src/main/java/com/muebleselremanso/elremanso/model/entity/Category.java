@@ -1,8 +1,10 @@
 package com.muebleselremanso.elremanso.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Category {
 
     @Id
@@ -23,6 +26,7 @@ public class Category {
     private String name;
     private String description;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "category")
     private List<Product> productList = new ArrayList<>();
 
