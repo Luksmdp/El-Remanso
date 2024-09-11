@@ -53,3 +53,7 @@ Xelremanso/src/main/java/com/muebleselremanso/elremanso/controller/ProductContro
 ]elremanso/src/main/java/com/muebleselremanso/elremanso/controller/ShoppingCartController.java,1\6\16b5a2f541b553b492e8d312e4025b3c1aed4dfc
 D
 elremanso/.gitignore,6\a\6aed1ca1315506e893da59ce4b18394d3ac86c99
+;
+Proximo.txt,b\5\b501188657ef412dcb2fe50def1a93e27d4ea539
+>
+Requisitos.txt,5\f\5f8fc6c6db6b823fbfedfd7ff567dae9e1bb48fd

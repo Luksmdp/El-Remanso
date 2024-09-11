@@ -22,19 +22,23 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping("products")
-    public ResponseEntity<List<Product>> findAll(){
-        List<Product> productList = productService.findAll();
+    public ResponseEntity<List<Product>> findAllProducts(){
 
-        return new ResponseEntity<>(productList, HttpStatus.OK);
+        return productService.findAll();
     }
 
     @GetMapping("products{id}")
-    public ResponseEntity<Product> findById(@PathVariable Long id){
-        return new ResponseEntity<>(productService.findById(id),HttpStatus.OK);
+    public ResponseEntity<Product> findProductById(@PathVariable Long id){
+        return productService.findById(id);
     }
 
     @PostMapping("products")
-    public ResponseEntity<Product> save(@RequestBody @Valid ProductDto productDto){
-        return new ResponseEntity<>(productService.save(productDto),HttpStatus.OK);
+    public ResponseEntity<Product> saveProduct(@RequestBody @Valid ProductDto productDto){
+        return productService.save(productDto);
+    }
+
+    @DeleteMapping("products/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable Long id){
+        return productService.delete(id);
     }
 }
