@@ -19,6 +19,6 @@ public class ProductDto {
     @PositiveOrZero(message = "El precio promocional debe ser mayor o igual a 0")
     private Double promotionalPrice;
 
-    @NotNull(message = "La categoría es obligatoria")
+    @NotNull(message = "El Id de la categoría es obligatoria")
     private Long categoryId;
 }

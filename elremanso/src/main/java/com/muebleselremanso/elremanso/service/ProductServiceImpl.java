@@ -64,14 +64,15 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public ResponseEntity<ApiResponse<List<Product>>> findAll() {
-        if (productRepository.findAll().isEmpty())
+        List<Product> productList = productRepository.findAll();
+        if (productList.isEmpty())
         {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(new ApiResponse<>("No se encontro ningun producto",null));
         }
         else {
             return ResponseEntity.status(HttpStatus.OK)
-                    .body(new ApiResponse<>("Productos encontrados",productRepository.findAll()));
+                    .body(new ApiResponse<>("Productos encontrados",productList));
         }
     }
 

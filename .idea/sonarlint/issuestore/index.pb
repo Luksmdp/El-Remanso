@@ -59,3 +59,5 @@ D
 Requisitos.txt,5\f\5f8fc6c6db6b823fbfedfd7ff567dae9e1bb48fd
 Å
 Qelremanso/src/main/java/com/muebleselremanso/elremanso/model/dto/ApiResponse.java,3\a\3a8c1cdf585bede231b643d976c8e73045c08717
+ä
+Zelremanso/src/main/java/com/muebleselremanso/elremanso/exception/RestExceptionHandler.java,4\9\4967ee49d6b5d98eba736de2294cee56cd8ce627
