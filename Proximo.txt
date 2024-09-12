@@ -1,1 +1,2 @@
-validaciones a los Dto
+Falta:
+    Cuando quiero borrar una categoria que contiene productos no la borra pero no me da ningun mensaje.

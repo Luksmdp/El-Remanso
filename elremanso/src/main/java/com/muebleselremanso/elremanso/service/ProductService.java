@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface ProductService {
 
-    ResponseEntity<Product> save(ProductDto productDto);
+    ResponseEntity<ApiResponse<Product>> save(ProductDto productDto);
     ResponseEntity<String> delete(Long id);
-    ResponseEntity<List<Product>> findAll();
+    ResponseEntity<ApiResponse<List<Product>>> findAll();
     ResponseEntity<ApiResponse<Product>> findById(Long id);
-    ResponseEntity<Product> update(ProductDto productDto,Long id);
+    ResponseEntity<ApiResponse<Product>> update(ProductDto productDto,Long id);
 }

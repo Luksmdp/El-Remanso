@@ -23,18 +23,18 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping("products")
-    public ResponseEntity<List<Product>> findAllProducts(){
+    public ResponseEntity<ApiResponse<List<Product>>> findAllProducts(){
 
         return productService.findAll();
     }
 
-    @GetMapping("products{id}")
+    @GetMapping("products/{id}")
     public ResponseEntity<ApiResponse<Product>> findProductById(@PathVariable Long id){
         return productService.findById(id);
     }
 
     @PostMapping("products")
-    public ResponseEntity<Product> saveProduct(@RequestBody @Valid ProductDto productDto){
+    public ResponseEntity<ApiResponse<Product>> saveProduct(@RequestBody @Valid ProductDto productDto){
         return productService.save(productDto);
     }
 

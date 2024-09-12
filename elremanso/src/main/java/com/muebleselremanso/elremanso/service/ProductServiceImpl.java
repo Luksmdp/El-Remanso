@@ -20,8 +20,9 @@ public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+
     @Override
-    public ResponseEntity<Product> save(ProductDto productDto) {
+    public ResponseEntity<ApiResponse<Product>> save(ProductDto productDto) {
 
         Optional<Category> categoryOptional = categoryRepository.findById(productDto.getCategoryId());
 
@@ -36,11 +37,11 @@ public class ProductServiceImpl implements ProductService{
                     .build();
 
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(productRepository.save(product));
+                    .body(new ApiResponse<>("Producto guardado correctamente",productRepository.save(product)));
         }
         else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(null);
+                    .body(new ApiResponse<>("Categoria no encontrada",null));
         }
 
 
@@ -52,19 +53,26 @@ public class ProductServiceImpl implements ProductService{
         Optional<Product> productOptional = productRepository.findById(id);
         if (productOptional.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Product with id " + id + " not found");
+                    .body("Producto con id " + id + " no encontrado");
         }
         else {
             productRepository.delete(productOptional.get());
             return ResponseEntity.status(HttpStatus.OK)
-                    .body("Product with id " + id + " deleted successfully");
+                    .body("Producto con id " + id + " eliminado correctamente");
         }
     }
 
     @Override
-    public ResponseEntity<List<Product>> findAll() {
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(productRepository.findAll());
+    public ResponseEntity<ApiResponse<List<Product>>> findAll() {
+        if (productRepository.findAll().isEmpty())
+        {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>("No se encontro ningun producto",null));
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(new ApiResponse<>("Productos encontrados",productRepository.findAll()));
+        }
     }
 
     @Override
@@ -76,7 +84,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public ResponseEntity<Product> update(ProductDto productDto, Long id) {
+    public ResponseEntity<ApiResponse<Product>> update(ProductDto productDto, Long id) {
         return null;
     }
 }
