@@ -1,5 +1,6 @@
 package com.muebleselremanso.elremanso.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -34,6 +35,7 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "product")
     private List<CartItem> cartItemList = new ArrayList<>();
 

@@ -30,7 +30,7 @@ public class CartItemController {
         return cartItemService.findAll();
     }
 
-    @GetMapping("cartItems{id}")
+    @GetMapping("cartItems/{id}")
     public ResponseEntity<ApiResponse<CartItem>> findById(@PathVariable Long id){
         return cartItemService.findById(id);
     }

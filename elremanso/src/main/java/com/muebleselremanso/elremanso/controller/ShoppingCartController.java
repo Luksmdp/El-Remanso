@@ -1,5 +1,6 @@
 package com.muebleselremanso.elremanso.controller;
 
+import com.muebleselremanso.elremanso.model.dto.ApiResponse;
 import com.muebleselremanso.elremanso.model.dto.CartItemDto;
 import com.muebleselremanso.elremanso.model.dto.ShoppingCartDto;
 import com.muebleselremanso.elremanso.model.entity.CartItem;
@@ -23,18 +24,23 @@ public class ShoppingCartController {
     private final ShoppingCartService shoppingCartService;
 
     @GetMapping("shoppingCarts")
-    public ResponseEntity<List<ShoppingCart>> findAll(){
+    public ResponseEntity<ApiResponse<List<ShoppingCart>>> findAll(){
 
         return shoppingCartService.findAll();
     }
 
-    @GetMapping("shoppingCarts{id}")
-    public ResponseEntity<ShoppingCart> findById(@PathVariable Long id){
+    @GetMapping("shoppingCarts/{id}")
+    public ResponseEntity<ApiResponse<ShoppingCart>> findById(@PathVariable Long id){
         return shoppingCartService.findById(id);
     }
 
     @PostMapping("shoppingCarts")
-    public ResponseEntity<ShoppingCart> save(@RequestBody @Valid ShoppingCartDto shoppingCartDto){
-        return shoppingCartService.save(shoppingCartDto);
+    public ResponseEntity<ApiResponse<ShoppingCart>> save(){
+        return shoppingCartService.save();
+    }
+
+    @DeleteMapping("shoppingCarts/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id){
+        return shoppingCartService.delete(id);
     }
 }

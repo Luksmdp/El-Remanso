@@ -36,9 +36,11 @@ public class CartItemServiceImpl implements CartItemService{
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(new ApiResponse<>("El Id del Producto no existe",null));
         }
+        shoppingCartOptional.get().setTotal(shoppingCartOptional.get().getTotal()
+                + cartItemDto.getSubtotal()*cartItemDto.getQuantity());
         CartItem cartItem = CartItem.builder()
                 .quantity(cartItemDto.getQuantity())
-                .subtotal(cartItemDto.getSubtotal())
+                .subtotal(cartItemDto.getSubtotal()*cartItemDto.getQuantity())
                 .shoppingCart(shoppingCartOptional.get())
                 .product(productOptional.get())
                 .build();
@@ -53,12 +55,12 @@ public class CartItemServiceImpl implements CartItemService{
         if (cartItemOptional.isEmpty())
         {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Item Carrito no encontrado");
+                    .body("Item Carrito con Id " + id + " no encontrado");
         }
         else {
             cartItemRepository.delete(cartItemOptional.get());
             return ResponseEntity.status(HttpStatus.OK)
-                    .body("Item Carrito eliminado correctamente");
+                    .body("Item Carrito con Id " + id + " eliminado correctamente");
         }
     }
 

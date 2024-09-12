@@ -1,5 +1,7 @@
 package com.muebleselremanso.elremanso.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -23,10 +25,12 @@ public class CartItem {
     @NotNull
     private Double subtotal;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "shoppingCart_id")
     private ShoppingCart shoppingCart;

@@ -1,8 +1,11 @@
 package com.muebleselremanso.elremanso.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,10 +22,10 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    private Double total;
+    private Double total = 0.0;
 
-    @OneToMany(mappedBy = "shoppingCart")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "shoppingCart" ,cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem> cartItemList = new ArrayList<>();
 
 }

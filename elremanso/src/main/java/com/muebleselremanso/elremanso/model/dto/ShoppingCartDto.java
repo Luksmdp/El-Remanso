@@ -2,7 +2,9 @@ package com.muebleselremanso.elremanso.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
+import lombok.Data;
 
+@Data
 public class ShoppingCartDto {
 
     @NotNull(message = "El total es obligatorio")
