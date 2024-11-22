@@ -37,10 +37,10 @@ public class CartItemServiceImpl implements CartItemService{
                     .body(new ApiResponse<>("El Id del Producto no existe",null));
         }
         shoppingCartOptional.get().setTotal(shoppingCartOptional.get().getTotal()
-                + cartItemDto.getSubtotal()*cartItemDto.getQuantity());
+                + productOptional.get().getPrice() * cartItemDto.getQuantity());
         CartItem cartItem = CartItem.builder()
                 .quantity(cartItemDto.getQuantity())
-                .subtotal(cartItemDto.getSubtotal()*cartItemDto.getQuantity())
+                .subtotal(productOptional.get().getPrice() * cartItemDto.getQuantity())
                 .shoppingCart(shoppingCartOptional.get())
                 .product(productOptional.get())
                 .build();

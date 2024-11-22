@@ -1,5 +1,6 @@
 package com.muebleselremanso.elremanso.service;
 
+import com.muebleselremanso.elremanso.exception.ResourceNotFoundException;
 import com.muebleselremanso.elremanso.model.dto.ApiResponse;
 import com.muebleselremanso.elremanso.model.dto.ProductDto;
 import com.muebleselremanso.elremanso.model.entity.Category;
@@ -88,4 +89,29 @@ public class ProductServiceImpl implements ProductService{
     public ResponseEntity<ApiResponse<Product>> update(ProductDto productDto, Long id) {
         return null;
     }
+
+    @Override
+    public ResponseEntity<ApiResponse<List<Product>>> findByCategoryAndPriceBetween(Long categoryId, Double priceMin, Double priceMax) {
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Categoría con id " + categoryId + " no encontrada"));
+
+        if (priceMin == null){
+            priceMin = 0.0;
+        }
+
+        if (priceMax == null){
+            priceMax = Double.MAX_VALUE;
+        }
+
+        List<Product> products = productRepository.findByCategoryAndPriceBetween(category, priceMin, priceMax);
+
+        if (products.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>("No se encontraron productos en la categoría " + category.getName() +
+                            " dentro del rango de precios especificado.", products));
+        }
+
+        return ResponseEntity.ok(new ApiResponse<>("Productos encontrados", products));
+    }
+
 }

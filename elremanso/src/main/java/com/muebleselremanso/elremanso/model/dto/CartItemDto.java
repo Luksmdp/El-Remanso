@@ -11,8 +11,8 @@ public class CartItemDto {
     @NotNull(message = "La cantidad es obligatoria")
     @Min(value = 1, message = "La cantidad debe ser al menos 1")
     private Integer quantity;
-    @NotNull(message = "El subtotal es obligatorio")
-    @PositiveOrZero(message = "El subtotal debe ser mayor o igual a 0")
+    //@NotNull(message = "El subtotal es obligatorio")
+    //@PositiveOrZero(message = "El subtotal debe ser mayor o igual a 0")
     private Double subtotal;
     @NotNull(message = "El Id del Producto es obligatorio")
     private Long productId;

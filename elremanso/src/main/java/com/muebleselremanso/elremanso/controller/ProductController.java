@@ -42,4 +42,12 @@ public class ProductController {
     public ResponseEntity<String> deleteProduct(@PathVariable Long id){
         return productService.delete(id);
     }
+
+    @GetMapping("products/filter")
+    public ResponseEntity<ApiResponse<List<Product>>> getProductsByCategoryAndPrice(
+            @RequestParam Long categoryId,
+            @RequestParam(required = false) Double priceMin,
+            @RequestParam(required = false) Double priceMax){
+        return productService.findByCategoryAndPriceBetween(categoryId,priceMin,priceMax);
+    }
 }

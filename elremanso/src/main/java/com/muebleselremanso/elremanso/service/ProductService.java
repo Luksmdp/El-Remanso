@@ -14,4 +14,5 @@ public interface ProductService {
     ResponseEntity<ApiResponse<List<Product>>> findAll();
     ResponseEntity<ApiResponse<Product>> findById(Long id);
     ResponseEntity<ApiResponse<Product>> update(ProductDto productDto,Long id);
+    ResponseEntity<ApiResponse<List<Product>>> findByCategoryAndPriceBetween(Long categoryId, Double priceMin, Double priceMax);
 }

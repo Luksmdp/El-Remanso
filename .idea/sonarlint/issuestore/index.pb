@@ -61,3 +61,9 @@ D
 Qelremanso/src/main/java/com/muebleselremanso/elremanso/model/dto/ApiResponse.java,3\a\3a8c1cdf585bede231b643d976c8e73045c08717
 ä
 Zelremanso/src/main/java/com/muebleselremanso/elremanso/exception/RestExceptionHandler.java,4\9\4967ee49d6b5d98eba736de2294cee56cd8ce627
+
+Oelremanso/src/main/java/com/muebleselremanso/elremanso/model/dto/WebConfig.java,1\e\1e8931a9ae74fc33c87f20bb2d6236367d20201c
+å
+\elremanso/src/main/java/com/muebleselremanso/elremanso/exception/GlobalExceptionHandler.java,9\0\904cdfc2e5957870e905c588495f851537dd5919
+è
+_elremanso/src/main/java/com/muebleselremanso/elremanso/exception/ResourceNotFoundException.java,0\d\0d303d26c6f1c8905c9d2d8a0a8e8a2a7f79ab6d
